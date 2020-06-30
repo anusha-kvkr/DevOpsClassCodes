@@ -3,15 +3,7 @@ pipeline {
 stages {
     
 
-    stage('Git_Checkout') {
-        steps{
-            
-      
-            git 'https://github.com/anusha-kvkr/DevOpsClassCodes.git'
-        }
-}
-
-stage('compile') {
+ stage('compile') {
     steps {
 withMaven(maven:'Aswini'){
 	sh 'mvn compile'
