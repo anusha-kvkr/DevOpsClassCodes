@@ -27,3 +27,26 @@ withMaven(maven:'Aswini'){
 }
 }
 }
+--------------------------------------------------------------------
+	node{  
+
+stage('Gi checkout') {
+git 'https://github.com/anusha-kvkr/DevOpsClassCodes.git'
+}
+
+stage('compile') {
+withMaven(maven:'Maven'){
+	sh 'mvn compile'
+	}
+}
+stage('test') {
+withMaven(maven:'Maven'){
+	sh 'mvn test'
+	}
+}
+stage('package') {
+withMaven(maven:'Maven'){
+	sh 'mvn package'
+	}
+}
+}
